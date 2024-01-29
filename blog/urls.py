@@ -3,7 +3,7 @@ from . import views
 
 
 urlpatterns = [
-    path("", views.starting_page, name = "starting-page"),
-    path("post", views.posts, name = "post-page"),
-    path("post/<str:slug>",views.post_detail,name = "post-page-detail") # /post/my-first-post
+    path("", views.StartingPageView.as_view(), name = "starting-page"),
+    path("post", views.AllPostsView.as_view(), name = "post-page"),
+    path("post/<str:slug>",views.SingPostView.as_view(),name = "post-page-detail") # /post/my-first-post
 ]
