@@ -29,7 +29,7 @@ class SingPostView(DetailView):
     template_name = "blog/post_detail.html"
     model = Post
 
-    # def get_context_data(self, **kwargs):
-    #     context = super().get_context_data(**kwargs)
-    #     context["post_tags"] = self.object.tags.all()
-    #     return context
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["post_tags"] = self.object.tags.all()
+        return context
